@@ -12,7 +12,7 @@ class CategoryItem extends StatelessWidget {
     //** Normal Route
     //** Named Route
     Navigator.of(context).pushNamed(
-      "/categories-meals",
+      CategoryMealsScreen.route,
       arguments: {
         'id': id,
         'title': title,
