@@ -19,7 +19,7 @@ class MealItem extends StatelessWidget {
     required this.affordability,
   });
   selectMeal(BuildContext context) {
-    Navigator.of(context).pushNamed(MealDetail.route, arguments: id);
+    Navigator.of(context).pushNamed(MealDetailScreen.route, arguments: id);
   }
 
   @override
