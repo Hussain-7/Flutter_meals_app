@@ -9,6 +9,7 @@ class MealItem extends StatelessWidget {
   final int duration;
   final Complexity complexity;
   final Affordability affordability;
+  final Function removeItem;
 
   const MealItem({
     required this.id,
@@ -17,9 +18,17 @@ class MealItem extends StatelessWidget {
     required this.duration,
     required this.complexity,
     required this.affordability,
+    required this.removeItem,
   });
   selectMeal(BuildContext context) {
-    Navigator.of(context).pushNamed(MealDetailScreen.route, arguments: id);
+    Navigator.of(context)
+        .pushNamed(MealDetailScreen.route, arguments: id)
+        .then((result) => {
+              // To check we only delete when
+              //delete floatingActionButton clicked
+              //not back button
+              if (result != null) {removeItem(result)}
+            });
   }
 
   @override
